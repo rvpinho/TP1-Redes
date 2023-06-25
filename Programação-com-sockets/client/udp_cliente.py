@@ -39,7 +39,7 @@ def main(argv):
                             if linha.strip() == 'fim':
                                 break
                             
-                            arquivo.write(str(linha) + '\n')
+                            arquivo.write(str(linha))
 
                     tempo_final = (datetime.datetime.now() - horario_inicial) * 1000
                     print('Arquivo baixado com sucesso. Tempo de transferencia: {}'.format(tempo_final))

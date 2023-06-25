@@ -35,7 +35,7 @@ def main(argv):
                             data = server.recv(BUFFER_SIZE)
                             linha = data.decode('utf-8', 'ignore').strip()
                               
-                            arquivo.write(str(linha) + '\n')
+                            arquivo.write(str(linha))
                             if 'fim' in linha:
                                 break
                     
