@@ -6,7 +6,7 @@ import os
 
 HOST = '26.97.191.32'  # endereço IP
 PORT = 20000        # Porta utilizada pelo servidor
-BUFFER_SIZE = 2048  # tamanho do buffer para recepção dos dados
+BUFFER_SIZE = 4096  # tamanho do buffer para recepção dos dados
 
 def main(argv): 
     try:

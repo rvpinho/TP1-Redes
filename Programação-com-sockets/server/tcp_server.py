@@ -7,7 +7,7 @@ from threading import Thread
 
 HOST = '26.141.228.32'  # endereço IP
 PORT = 20000        # Porta utilizada pelo servidor
-BUFFER_SIZE = 2048  # tamanho do buffer para recepção dos dados
+BUFFER_SIZE = 4096  # tamanho do buffer para recepção dos dados
 
 def listar_arquivos_caminho(caminho):
     sequencia = 1
