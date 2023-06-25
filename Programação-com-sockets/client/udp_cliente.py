@@ -37,7 +37,7 @@ def main(argv):
                             if linha.strip() == 'fim':
                                 break
                             
-                            arquivo.write(str(linha) + '\n')
+                            arquivo.write(str(linha))
                             
                     print("Arquivo baixado com sucesso.")
                 
