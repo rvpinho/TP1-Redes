@@ -2,6 +2,7 @@
 __author__ = "Filipe Ribeiro"
 
 import os
+import datetime
 import socket, sys
 
 HOST = '127.0.0.1'  # endereço IP
@@ -27,6 +28,7 @@ def main(argv):
                     caminho_pasta = './docs'
                     nome_arquivo = 'arquivoBaixado.txt'
                     caminho_arquivo = os.path.join(caminho_pasta, nome_arquivo)
+                    horario_inicial = datetime.datetime.now()
                     
                     print('Arquivo sendo baixado...')
                     with open(caminho_arquivo, 'w') as arquivo:
@@ -37,9 +39,10 @@ def main(argv):
                             if linha.strip() == 'fim':
                                 break
                             
-                            arquivo.write(str(linha))
-                            
-                    print("Arquivo baixado com sucesso.")
+                            arquivo.write(str(linha) + '\n')
+
+                    tempo_final = (datetime.datetime.now() - horario_inicial) * 1000
+                    print('Arquivo baixado com sucesso. Tempo de transferencia: {}'.format(tempo_final))
                 
                 elif (texto == 'bye'):
                     print('vai encerrar o socket cliente!')
