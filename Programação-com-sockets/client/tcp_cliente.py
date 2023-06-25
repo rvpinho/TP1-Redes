@@ -4,9 +4,9 @@ __author__ = "Filipe Ribeiro"
 import socket, sys
 import os
 
-HOST = '127.0.0.1'  # endereço IP
+HOST = '26.97.191.32'  # endereço IP
 PORT = 20000        # Porta utilizada pelo servidor
-BUFFER_SIZE = 1024  # tamanho do buffer para recepção dos dados
+BUFFER_SIZE = 2048  # tamanho do buffer para recepção dos dados
 
 def main(argv): 
     try:
@@ -36,8 +36,7 @@ def main(argv):
                             if linha.strip() == 'fim':
                                 break
                             
-                            arquivo.write(str(linha))
-                            
+                            arquivo.write(str(linha))   
                     print("Arquivo baixado com sucesso.")
                 
                 elif (texto == 'bye'):
