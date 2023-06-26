@@ -5,7 +5,7 @@ import os
 import datetime
 import socket, sys
 
-HOST = '192.168.2.17'  # endereço IP
+HOST = '127.0.0.1'  # endereço IP
 PORT = 20000        # Porta utilizada pelo servidor
 BUFFER_SIZE = 1024  # tamanho do buffer para recepção dos dados
 
@@ -35,9 +35,12 @@ def main(argv):
                             data = server.recv(BUFFER_SIZE)
                             linha = data.decode('utf-8', 'ignore').strip()
                               
-                            arquivo.write(str(linha))
+                            
                             if 'fim' in linha:
                                 break
+                            
+                            arquivo.write(str(linha) + '\n')
+                            
                     
                     tempo_final = (datetime.datetime.now() - horario_inicial) * 1000
                     print('Arquivo baixado com sucesso. Tempo de transferencia: {}'.format(tempo_final))

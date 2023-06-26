@@ -63,13 +63,14 @@ def main(argv):
                 for linha in conteudo:
                     bloco += linha
                     contador+=1
-                    if contador == 100:
+                    if contador == 20:
                         UDPServerSocket.sendto(bloco.encode(), endereco)
                         contador = 0
                         bloco = ''
-
-                for linha in conteudo:
-                    UDPServerSocket.sendto(linha.encode(), endereco)
+                if contador!=0:
+                    UDPServerSocket.sendto(bloco.encode(), endereco)
+                #for linha in conteudo:
+                #    UDPServerSocket.sendto(linha.encode(), endereco)
                     
                 UDPServerSocket.sendto('fim'.encode(), endereco)
                 print('Arquivo enviado')

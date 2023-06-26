@@ -5,7 +5,7 @@ import os
 import socket, sys
 from threading import Thread
 
-HOST = '26.141.228.32'  # endereço IP
+HOST = '127.0.0.1'  # endereço IP
 PORT = 20000        # Porta utilizada pelo servidor
 BUFFER_SIZE = 1024  # tamanho do buffer para recepção dos dados
 
@@ -56,10 +56,13 @@ def on_new_client(clientsocket,addr):
                 for linha in conteudo:
                     bloco += linha
                     contador+=1
-                    if contador == 100:
+                    if contador == 20: 
                         clientsocket.send(bloco.encode())
                         contador = 0
                         bloco = ''
+                
+                if contador != 0:
+                    clientsocket.send(bloco.encode())
                     
                 clientsocket.send('fim'.encode())
                 print('Arquivo enviado')
