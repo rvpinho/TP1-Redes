@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-__author__ = "Filipe Ribeiro"
+__author__ = "Rafael, Bruno e Gabriel"
 
 import os
 import datetime
 import socket, sys
 
-HOST = '127.0.0.1'  # endereço IP
+HOST = '26.141.228.32'  # endereço IP
 PORT = 20000        # Porta utilizada pelo servidor
 BUFFER_SIZE = 1024  # tamanho do buffer para recepção dos dados
 

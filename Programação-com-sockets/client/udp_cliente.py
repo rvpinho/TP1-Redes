@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-__author__ = "Filipe Ribeiro"
+__author__ = "Rafael, Bruno e Gabriel"
 
 import os
 import datetime
