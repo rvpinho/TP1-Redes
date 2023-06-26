@@ -58,6 +58,16 @@ def main(argv):
                 conteudo = obter_conteudo_arquivo(int(texto_recebido))
                 
                 print('Arquivo sendo enviado...')
+                contador=0
+                bloco = ''
+                for linha in conteudo:
+                    bloco += linha
+                    contador+=1
+                    if contador == 100:
+                        UDPServerSocket.sendto(bloco.encode(), endereco)
+                        contador = 0
+                        bloco = ''
+
                 for linha in conteudo:
                     UDPServerSocket.sendto(linha.encode(), endereco)
                     

@@ -5,7 +5,7 @@ import os
 import datetime
 import socket, sys
 
-HOST = '127.0.0.1'  # endereço IP
+HOST = '192.168.2.17'  # endereço IP
 PORT = 20000        # Porta utilizada pelo servidor
 BUFFER_SIZE = 1024  # tamanho do buffer para recepção dos dados
 
