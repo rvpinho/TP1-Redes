@@ -51,8 +51,16 @@ def on_new_client(clientsocket,addr):
                 conteudo = obter_conteudo_arquivo(int(texto_recebido))
                 
                 print('Arquivo sendo enviado...')
+                contador=0
+                bloco = ''
+                enviou = "enviou 50"
                 for linha in conteudo:
-                    clientsocket.send(linha.encode())
+                    bloco += linha
+                    contador+=1
+                    if contador == 100:
+                        clientsocket.send(bloco.encode())
+                        contador = 0
+                        bloco = ''
                     
                 clientsocket.send('fim'.encode())
                 print('Arquivo enviado')
